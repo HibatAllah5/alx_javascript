@@ -1,12 +1,14 @@
 //script that adds a new function incr that increments the integer value.
-const myObject = {
+let myObject = {
   type: 'object',
   value: 12
 };
 console.log(myObject);
+
 myObject.incr = function () {
   this.value++;
 };
+
 myObject.incr();
 console.log(myObject);
 myObject.incr();
