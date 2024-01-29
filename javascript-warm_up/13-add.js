@@ -1,2 +1,7 @@
 //script that returns the addition of 2 integers.
-exports.add = (a, b) => a + b;
+const add = (a, b) => {
+    return a + b;
+};
+
+module.exports = add;
+
