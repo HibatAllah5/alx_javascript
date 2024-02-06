@@ -1,0 +1,1 @@
+Hello, in today's project we are going to work with JAVASCRIPT, we are going to manipulate JSON data, and learn how to use request and fetch API.
