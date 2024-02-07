@@ -1,0 +1,1 @@
+In today's project, we are working on Javascript advanced.

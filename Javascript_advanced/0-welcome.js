@@ -1,7 +1,10 @@
-#!/usr/bin/node
-function welcome(fullName) {
-    let fullName = ('firstName' ,'lastName');
+function welcome(firstName, lastName) {
+    const fullName = '${firstName} {$lastName{}';
+
     function displayFullName() {
-        console.log('Welcome' + ''+ displayFullName +!)
+        qlert('Welcome ${fullName}!');
     }
+    displayFullName();
 }
+
+welcome('Holberton', 'School');
