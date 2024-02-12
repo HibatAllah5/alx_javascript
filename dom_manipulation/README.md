@@ -1,0 +1,1 @@
+In this project, we are working with DOM to access and manipulate elements with JS, and to use it to interact with the content of a web page.
