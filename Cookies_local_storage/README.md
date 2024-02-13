@@ -1,0 +1,1 @@
+In this project we are going to work on how to create cookies using JS.
