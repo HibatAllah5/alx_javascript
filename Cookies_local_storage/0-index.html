@@ -11,33 +11,33 @@
     <input type="text" id="firstname" style="display: inline;">
     <label style="margin-left: 10px;">Email</label>
     <input type="text" id="email" style="display: inline;">
+    
     <button onclick="setCookies()" style="display: inline;">Log me in</button>
     <h1>Cookies</h1>
     <button onclick="showCookies()">Show the cookies</button>
+    
     <div id="cookies"></div>
     <script>
         function setCookies() {
-            var firstname = document.getElementById('firstname').value;
-            var email = document.getElementById('email').value;
-
-            document.cookie = "firstname=" + firstname + ";expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/";
-            document.cookie = "email=" + email + ";expires=Fri, 31 Dec 9999 23:59:59 UTC; path=/";
+            const firstName = document.getElementById("firstname").value;
+            const email = document.getElementById("email").value;
+            document.cookie = `firstName=${firstName}; expires=${expireDate.toUTCString()}; path=/`;
+            document.cookie += `email=${email}; expires=${expireDate.toUTCString()}; path=/`;
+            console.log(document.cookie);
         }
 
         function showCookies() {
-            var cookies = document.getElementById('cookies');
-            var cookieString = document.cookie;
-            var cookieArray = cookieString.split('; ');
-
-            var cookiesHTML = 'Cookies:<br>';
-
-            for (var i = 0; i < cookieArray.length; i++) {
-                var cookie = cookieArray[i].split('=');
-                cookiesHTML += cookie[0] + ': ' + cookie[1] + '<br>';
-            }
-
-            cookies.innerHTML = cookiesHTML;
+           const cookiesParagraph = document.createElement("p");
+           cookiesParagraph.textContent = `Cookies: ${document.cookie}`;
+           document.body.appendChild(cookiesParagraph);
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("loginButton").addEventListener("click", setCookies);
+        document.getElementById("showCookiesButton").addEventListener("click", showCookies);
+        });
+
     </script>
+    
 </body>
 </html>
