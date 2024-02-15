@@ -4,7 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to the website</title>
+    <style>
+        h1{
+            color: black;
+            font-family:'Times New Roman', Times, serif;
+            font-size: 45px;
+        }
+
+        input{
+            padding: 7px;
+            font-size: 16px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid rgb(207, 207, 207);
+            border-radius: 3px;
+            margin-right: 3px;
+        }
+
+        button{
+            font-size: 16px;
+            padding: 4px 9px;
+            border: 1px solid rgb(207, 207, 207);
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.15s;
+        }
+
+        button:hover{
+            background-color: rgb(179, 179, 179);
+        }
+
+        button:active{
+            background-color: white;
+        }
+
+        #cookiesContainer {
+        margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Login to the website</h1>
     <label>Firstname</label>
@@ -17,6 +56,7 @@
     <button onclick="showCookies()">Show the cookies</button>
     
     <div id="cookies"></div>
+    
     <script>
         function setCookies() {
             const firstName = document.getElementById("firstname").value;
