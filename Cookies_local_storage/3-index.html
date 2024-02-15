@@ -6,61 +6,42 @@
     <title>Login to the website</title>
 </head>
 <body>
-    <h1>Login to the website</h1>
-
-    <label>Firstname:</label>
-
-    <input type="text" id="firstname" style="display: inline;">
-
-    <label style="margin-left: 10px;">Email:</label>
-
+    <h2>Login to the website</h2>
+    <input type="text" id="firstName" style="display: inline;" >
     <input type="text" id="email" style="display: inline;">
-
-    <button onclick="setCookies()" style="display: FIRSTNAME;">Log me in</button>
-
-    <h4>When a user is logged in the page should look like the image below</h4>
-
-    <div id="form"></div>
-
     
-    /////////<script>
-        function showForm() {
-            $('DIV#remove_').click(function () {
-                $('UL.my_list li:last-child').remove(); 
-            });
+    <button onclick="setCookies()" style="display: inline;">Log me in</button>
+    
+    <div id="Form"></div>
+    <script>
+        function setCookies() {
+            const firstName = document.getElementById("firstname").value;
+            const email = document.getElementById("email").value;
+            // Set expiration time (adjust the value accordingly)
+            const expireDate = new Date();
+            expireDate.setDate(expireDate.getDate() + 10); // expires in 10 days
+
+            document.cookie = `firstName=${firstName}; expires=${expireDate.toUTCString()}; path=/`;
+            document.cookie += `email=${email}; expires=${expireDate.toUTCString()}; path=/`;
+            console.log(document.cookie);
         }
 
-        function hideForm() {
-            var cookies = document.getElementById('cookies');
-            var cookieString = document.cookie;
-            var cookieArray = cookieString.split('; ');
-
-            var cookiesHTML = 'Cookies:<br>';
-
-            for (var i = 0; i < cookieArray.length; i++) {
-                var cookie = cookieArray[i].split('=');
-                cookiesHTML += cookie[0] + ': ' + cookie[1] + '<br>';
-            }
-
-            cookies.innerHTML = cookiesHTML;
-            
+        function showCookies() {
+           const cookiesParagraph = document.createElement("p");
+           cookiesParagraph.textContent = `Cookies: ${document.cookie}`;
+           document.body.appendChild(cookiesParagraph);
         }
 
-        function deleteCookiesAndShowForm() {
-            var cookies = ` ${document.cookie}`.split(";");
-            var val = "";
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i].split("=");
-                if (cookie[0] == ` ${cname}`) {
-                    return cookie[1];
-                }
-            }
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("loginButton").addEventListener("click", setCookies);
+        document.getElementById("showCookiesButton").addEventListener("click", showCookies);
+        });
 
-        function showWelcomeMessageOrForm() {
+        function getCookie(name) {
+            console.log('' ${name})
+        } 
 
-        }
-    //////</script>
+    </script>
 
 </body>
 </html>
