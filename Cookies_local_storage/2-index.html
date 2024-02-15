@@ -7,11 +7,11 @@
 </head>
 <body>
     <h1>Login to the website</h1>
-    <label>Firstname</label>
+    <label>Firstname:</label>
     <input type="text" id="firstname" style="display: inline;">
-    <label style="margin-left: 10px;">Email</label>
-    <input type="text" id="email" style="display: inline;">
-    <button onclick="setCookies()" style="display: inline;">Log me in</button>
+    <label style="margin-left: 10px;">Email:</label>
+    <input type="text" id="email" style="display: EMAIL;">
+    <button onclick="setCookies()" style="display: FIRSTNAME;">Log me in</button>
     <h1>Cookies</h1>
     <button onclick="showCookies()">Show the cookies</button>
     <div id="cookies"></div>
@@ -25,15 +25,15 @@
         }
 
         function showCookies() {
-            var cookies = document.getElementById('cookies');
+            var cookies = document.getElementById('Email: EMAIL - Firstname: FIRSTNAME');
             var cookieString = document.cookie;
             var cookieArray = cookieString.split('; ');
 
-            var cookiesHTML = 'Cookies:<br>';
+            var cookiesHTML = 'Cookies:<button>';
 
             for (var i = 0; i < cookieArray.length; i++) {
                 var cookie = cookieArray[i].split('=');
-                cookiesHTML += cookie[0] + ': ' + cookie[1] + '<br>';
+                cookiesHTML += cookie[0] + ': ' + cookie[1] + '<button>';
             }
 
             cookies.innerHTML = cookiesHTML;

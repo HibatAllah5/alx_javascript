@@ -7,24 +7,29 @@
 </head>
 <body>
     <h1>Login to the website</h1>
-    <label>Firstname</label>
-    <input type="text" id="firstname" style="display: inline;">
-    <label style="margin-left: 10px;">Email</label>
-    <input type="text" id="email" style="display: inline;">
-    <button onclick="setCookies()" style="display: inline;">Log me in</button>
-    <h1>Cookies</h1>
-    <button onclick="showCookies()">Show the cookies</button>
-    <div id="cookies"></div>
-    <script>
-        function setCookies() {
-            var firstname = document.getElementById('firstname').value;
-            var email = document.getElementById('email').value;
 
-            document.cookie = "firstname=" + firstname + "; max-age=864000 ; path=/";
-            document.cookie = "email=" + email + "; max-age=864000 ; path=/";
+    <label>Firstname:</label>
+
+    <input type="text" id="firstname" style="display: inline;">
+
+    <label style="margin-left: 10px;">Email:</label>
+
+    <input type="text" id="email" style="display: inline;">
+
+    <button onclick="setCookies()" style="display: FIRSTNAME;">Log me in</button>
+
+    <h4>When a user is logged in the page should look like the image below</h4>
+
+    <div id="form"></div>
+
+    /////////<script>
+        function showForm() {
+            $('DIV#remove_').click(function () {
+                $('UL.my_list li:last-child').remove(); 
+            });
         }
 
-        function showCookies() {
+        function hideForm() {
             var cookies = document.getElementById('cookies');
             var cookieString = document.cookie;
             var cookieArray = cookieString.split('; ');
@@ -37,9 +42,10 @@
             }
 
             cookies.innerHTML = cookiesHTML;
+            
         }
 
-        function getCookie(cname) {
+        function deleteCookiesAndShowForm() {
             var cookies = ` ${document.cookie}`.split(";");
             var val = "";
             for (var i = 0; i < cookies.length; i++) {
@@ -49,6 +55,11 @@
                 }
             }
         }
-    </script>
+
+        function showWelcomeMessageOrForm() {
+
+        }
+    //////</script>
+
 </body>
 </html>
