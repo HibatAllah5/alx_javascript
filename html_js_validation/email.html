@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1-email-validation.js">
+    <title>Document</title>
+</head>
+<body>
+    <form id="emailForm">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br><br>
+        <button type="submit">Submit</button>
+        <p id="error" style="color: red;"></p>
+    </form>
+</body>
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:	#efefef ;
+  color: white;
+}
+body * {
+  box-sizing: border-box;
+}
+body *:focus {
+  outline: 0;
+}
+
+form {
+  width: 500px;
+  height: 500px;
+  padding: 35px;
+  background-color:transparent;
+  background-image: url(https://img.atlasobscura.com/h3HE22EyhtGyGGIM4JDmNFxKklaS0w0XUW7nlQ9ivGE/rt:fit/w:1200/q:81/sm:1/scp:1/ar:1/aHR0cHM6Ly9hdGxh/cy1kZXYuczMuYW1h/em9uYXdzLmNvbS91/cGxvYWRzL2V2ZW50/X2ltYWdlcy8xMzZi/YjU1Zi05YTdmLTQ4/YjAtOGRkZS04OTY0/ZjRlZGQzYzhiNDRl/NjRiYjMxODliYTNi/Yjhfc2h1dHRlcnN0/b2NrXzc5MTc3ODEz/OS5qcGc.jpg);
+}
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+form input[type=text],
+form input[type=email] {
+  display: block;
+  height: 36px;
+  margin-bottom: 8px;
+  padding: 0 36px 0 10px;
+  border: 2px solid black;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+form ul.helper-text {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 22px;
+  color: red;
+}
+form ul.helper-text li.valid {
+  color: blue;
+}
+form.valid input {
+  border: 2px solid blue;
+}
+</style>
+</html>
