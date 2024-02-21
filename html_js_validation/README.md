@@ -1,1 +1,1 @@
-In this project we are going to create html forms by using JS codes.
+In this project we are going to create html forms by using JAVASCRIPT codes.
